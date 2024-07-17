@@ -1,8 +1,7 @@
-import { Image, StyleSheet, Platform, Alert, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, Platform, Alert, TouchableOpacity, Text } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 import * as Sentry from '@sentry/react-native';
@@ -18,9 +17,6 @@ Sentry.init({
 export default function HomeScreen() {
   const test = () => {
     try {
-      Promise.all([Promise.resolve(1), Promise.resolve(2)]).then(() =>
-        Alert.alert('promise.all worked'),
-      );
       Promise.allSettled([Promise.resolve(1), Promise.resolve(2)]).then(() =>
         Alert.alert('promise.allSettled worked'),
       );
@@ -40,9 +36,9 @@ export default function HomeScreen() {
       }>
       <ThemedView style={styles.stepContainer}>
         <TouchableOpacity onPress={test} style={styles.button}>
-          <ThemedText>
+          <Text>
             Press me
-          </ThemedText>
+          </Text>
         </TouchableOpacity>
       </ThemedView>
     </ParallaxScrollView>
