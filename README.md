@@ -25,26 +25,23 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+## Sentry Issue
+When Sentry is enabled, Promise.allSettled is undefined. But works well if Sentry is disabled.
 
-When you're ready, run:
+Steps to reproduce:
+1. Go to app/(tabs)/index.tsx
+2. Add a Sentry DNS to `Sentry.init`
+3. Run the app
+4. Press "Press me" button
+5. See that Promise.allSettled fails
+6. Disable Sentry and repeat the process
+7. Check that Promise.allSettled works
 
-```bash
-npm run reset-project
-```
+Tested on iOS and Android
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Sentry enabled
+https://github.com/user-attachments/assets/21e69307-cfd4-45e0-a9f2-2e1bd050d9ba
 
-## Learn more
+### Sentry disabled
+https://github.com/user-attachments/assets/928bb1b8-e147-4699-a525-e19cf6754267
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
